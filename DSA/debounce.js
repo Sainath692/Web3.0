@@ -1,0 +1,11 @@
+function debounceFn(callback, delay) {
+  let timer;
+
+  return function (...args) {
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+      callback(...args);
+    }, delay);
+  };
+}
